@@ -4,7 +4,7 @@ A collection of small web applications built with JS
 
 ## Screenshot
 
-![App Screenshot](screenshots/screenshot.png)
+![App Screenshot]
 
 ## Features
 
