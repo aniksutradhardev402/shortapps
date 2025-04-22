@@ -1,0 +1,106 @@
+.calculator-card{
+
+margin: 20px 40px 20px 20px;
+height: 50vh;
+border-radius: 20px;
+width: 400px;
+display: flex;
+background-color:#181F32;
+
+}
+.calculator {
+    
+    
+    border-radius: 10px;
+    padding: 20px;
+    width: 100vw;
+    
+    
+
+}
+
+.calculator-display {
+    background-color: #b3d38f;
+    padding: 20px;
+    text-align: right;
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(193, 194, 194, 0.589);
+
+}
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.calculator-keys button {
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.calculator-keys button:hover {
+    background-color: #e9ecef;
+}
+
+.calculator-keys .operator {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.calculator-keys .equal-sign {
+    background-color: #4caf50;
+    color: white;
+    grid-column: span 4;
+}
+
+.calculator-keys .clear {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+.calculator-keys button:active {
+    transform: scale(0.95);
+}
+
+/* Responsive styles for calculator */
+@media screen and (max-width: 768px) {
+    .calculator-card {
+        width: 100vw;
+        margin: 10px;
+    }
+    .calculator-keys {
+        grid-gap: 10px;
+    }
+    
+    .calculator-keys button {
+        padding: 10px;
+        font-size: 1em;
+    }
+    
+    .calculator-keys .equal-sign {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .calculator-keys {
+        grid-gap: 5px;
+    }
+    
+    .calculator-keys button {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+    
+    .calculator-keys .equal-sign {
+        grid-column: span 1;
+    }
+} 

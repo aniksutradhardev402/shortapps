@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/drawing.css">
+    <link rel="stylesheet" href="styles/qr.css">
+    <link rel="stylesheet" href="styles/clock.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="todo"> 
+        <div class="Appcard">
+            <h2>TO-DO LIST<img src="styles/books.png" alt="To-Do List Icon" class="todo-icon"></h2>
+            
+            <div class="row">
+                <input id="input-box" type="text" placeholder="Add a new task" class="input-field">
+                <button onclick="addTask()"  class="add-button">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+            <ul class="task-list" id="list-container">
+                <!-- <li >
+                    Sample Task
+                </li>
+                <li >
+                    Sample Task
+                </li>
+                <li >
+                    Sample Task
+                </li>
+                <li class="checked">
+                    Sample Task
+                </li> -->
+                </ul>
+
+        </div>
+    </div>
+
+        <div class="calculator-card">
+            <div class="calculator">
+                <div class="calculator-display">0</div>
+                <div class="calculator-keys">
+                    <button type="button" value="7" style="color: #181F32;"  >7</button>
+                    <button type="button" value="8" style="color: #181F32;">8</button>
+                    <button type="button" value="9" style="color: #181F32;">9</button>
+                    <button type="button" class="operator" value="/" style="color: #181F32;">/</button>
+                    <button type="button" value="4" style="color: #181F32;">4</button>
+                    <button type="button" value="5" style="color: #181F32;">5</button>
+                    <button type="button" value="6" style="color: #181F32;">6</button>
+                    <button type="button" class="operator" value="*" style="color: #181F32;">×</button>
+                    <button type="button" value="1" style="color: #181F32;">1</button>
+                    <button type="button" value="2" style="color: #181F32;">2</button>
+                    <button type="button" value="3" style="color: #181F32;">3</button>
+                    <button type="button" class="operator" value="-" style="color: #181F32;">-</button>
+                    <button type="button" value="0" style="color: #181F32;">0</button>
+                    <button type="button" value="." style="color: #181F32;">.</button>
+                    <button type="button" class="clear" value="clear" style="color: #181F32;">C</button>
+                    <button type="button" class="operator" value="+" style="color: #181F32;">+</button>
+                    <button type="button" class="equal-sign" value="=" style="color: #181F32;">=</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pomodoro-card">
+            <div class="pomodoro">
+                <h2>Pomodoro Timer</h2>
+                <div class="timer-display">
+                    <span id="minutes">25</span>:<span id="seconds">00</span>
+                </div>
+                <div class="timer-controls">
+                    <button id="start-timer" class="timer-btn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <button id="reset-timer" class="timer-btn">
+                        <i class="fa-solid fa-rotate"></i>
+                    </button>
+                </div>
+                <div class="timer-modes">
+                    <button class="mode-btn active" data-time="25">Work</button>
+                    <button class="mode-btn" data-time="5">Short Break</button>
+                    <button class="mode-btn" data-time="15">Long Break</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="qr-card">
+            <div class="qr-generator">
+                <h2>QR Code Generator</h2>
+                <div class="qr-input">
+                    <input type="text" id="qr-text" placeholder="Enter text or URL">
+                    <button id="generate-qr" class="btn">Generate QR</button>
+                </div>
+                <div class="qr-output">
+                    <div id="qr-code"></div>
+                    <button id="download-qr" class="btn">Download QR</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="clock-card">
+            <div class="clock">
+                <h2>Analog Clock</h2>
+                <div class="date-display">
+                    <span id="current-date">Loading...</span>
+                </div>
+                <div class="digital-time">
+                    <span id="digital-time">00:00:00</span>
+                </div>
+                <div class="clock-face">
+                    <div class="hand hour-hand"></div>
+                    <div class="hand minute-hand"></div>
+                    <div class="hand second-hand"></div>
+                    <div class="center-dot"></div>
+                    <div class="number number1">1</div>
+                    <div class="number number2">2</div>
+                    <div class="number number3">3</div>
+                    <div class="number number4">4</div>
+                    <div class="number number5">5</div>
+                    <div class="number number6">6</div>
+                    <div class="number number7">7</div>
+                    <div class="number number8">8</div>
+                    <div class="number number9">9</div>
+                    <div class="number number10">10</div>
+                    <div class="number number11">11</div>
+                    <div class="number number12">12</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signin-card">
+            <div class="formcard" id="signup-form">
+                <h1>Sign Up</h1>
+                <form id="signup">
+                    <div class="input-group">
+                        <input type="text" class="input-field" placeholder="Name" required>
+                        <input type="email" class="input-field" placeholder="Email" required>
+                        <input type="password" class="input-field" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Sign Up</button>
+                    <div class="form-toggle">
+                        Already have an account? <span onclick="toggleForm('signin')">Sign In</span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="formcard hidden" id="signin-form">
+                <h1>Sign In</h1>
+                <form id="signin">
+                    <div class="input-group">
+                        <input type="email" class="input-field" placeholder="Email" required>
+                        <input type="password" class="input-field" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Sign In</button>
+                    <div class="form-toggle">
+                        Don't have an account? <span onclick="toggleForm('signup')">Sign Up</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/todo.js"></script>
+    <script src="scripts/calculator.js"></script>
+    <script src="scripts/signin.js"></script>
+    <script src="scripts/pomodoro.js"></script>
+    <script src="scripts/budget.js"></script>
+    <script src="scripts/qr.js"></script>
+    <script src="scripts/clock.js"></script>
+    <script src="scripts/drawing.js"></script>
+</body>
+</html>
